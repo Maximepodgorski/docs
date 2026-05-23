@@ -1,0 +1,37 @@
+---
+title: "Linear"
+description: "Connect Linear to receive tasks from Lyse."
+---
+
+![Linear Light](/images/integrations/linear-dark.png)
+
+## Setup
+
+1. Go to **Settings \> Integrations \> Linear**
+2. Click **Connect** and authorize Lyse
+3. Select your default team and project
+4. Click **Save**
+
+## What gets created
+
+When you mention `@Lyse` in Slack, a Linear issue is created with:
+
+- Title generated from the conversation
+- Description with full context
+- Assigned to your default team and project
+
+## Configuration
+
+Change your default team and project anytime in **Settings \> Integrations \> Linear**.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection failed">
+    Make sure you have permission to install apps in your Linear workspace. Try disconnecting and reconnecting.
+  </Accordion>
+  <Accordion title="Tasks not appearing">
+    - Check your Linear connection is active
+    - Verify the selected team and project still exist
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,196 @@
+---
+title: "Slack"
+description: "Turn any Slack conversation into an actionable task. Mention @Lyse in a thread, and it extracts the context and creates a task ready to publish to your issue tracker."
+---
+
+## Why it matters
+
+Decisions get made in Slack. Bugs get reported. Feature ideas emerge from casual discussions. But that context stays buried in threads—until someone manually copies it into a task.
+
+Thread to Task fixes this. When a conversation reaches a conclusion, mention `@Lyse` and the task is captured instantly. No switching tabs, no copy-pasting, no lost context.
+
+![Hero Dark](/images/integrations/slack-dark.png)
+
+## How to use it
+
+### Basic usage
+
+Reply to any thread with `@Lyse`. Lyse reads the conversation, identifies what matters, and creates a task in your inbox.
+
+**Example**
+
+```
+[Thread about a login bug, 12 messages]
+You: @Lyse create task
+Lyse:  Task created
+```
+
+### With instructions
+
+Add instructions after the mention to create a specific task or guide the analysis.
+
+**Create a standalone task** (not based on thread content):
+
+> `@Lyse` we need to migrate the authentication flow from JWT to session-based auth before the security audit next month
+
+> `@Lyse` create a task to add loading states on all buttons that trigger API calls in the settings page
+
+**Guide thread analysis** (tell Lyse what to focus on):
+
+> `@Lyse` create a bug task — Formats it as a bug report
+
+> `@Lyse` focus on the performance issues mentioned
+
+> `@Lyse` this is a P1 bug for the frontend team
+
+**Example**
+
+```markdown
+@Lyse create the tasks for the product team
+```
+
+<Info>
+  **Coming soon:** Auto mode will automatically assign tasks, apply labels, and select the right project based on the task context.
+</Info>
+
+### What it extracts
+
+When analyzing a thread, Lyse identifies:
+
+- **The main topic** — What the conversation is about
+- **Key details** — Error messages, steps to reproduce, specific requests
+- **Feature context** — How the feature should work, use cases, and requirements
+- **Decisions made** — Conclusions the team reached
+- **Action items** — What needs to happen next
+- **People involved** — Who reported, who participated in the discussion
+
+The AI turns this into structured tasks with a clear title and actionable description. For feature discussions, Lyse captures the full context: why it's needed, how it should behave, and edge cases mentioned in the conversation.
+
+---
+
+## Example workflow
+
+**The thread:**
+
+> **Sarah**: The dashboard is showing yesterday's data for some users\
+> **Mike**: I can reproduce it. Happens when you switch between date ranges quickly\
+> **Sarah**: Looks like a caching issue?\
+> **Mike**: Yeah, the API returns stale data. We're not invalidating the cache on date change\
+> **Sarah**: Can we get this fixed this sprint?\
+> **Mike**: Should be straightforward once we identify which cache
+
+**You mention:** `@Lyse create a bug task`
+
+<Check>
+  Lyse analyzes the thread and generates a task in your inbox: **"Dashboard shows stale data when switching date ranges"** with all the technical context from the conversation.
+</Check>
+
+---
+
+## Tips for better results
+
+### Be specific
+
+The more context you give, the better the output.
+
+> `@Lyse` create a task - **works**
+
+> `@Lyse` create a task to redesign the onboarding flow with the new stepper component, add empty states for each step, and ensure all CTAs use the button.primary variant - **works better**
+
+### Right timing
+
+Mention `@Lyse` when:
+
+- A decision has been made
+- A bug is clearly identified
+- An action item is agreed upon
+- You're about to forget something important
+
+Don't mention `@Lyse` mid-discussion—wait until there's something actionable.
+
+### Review first
+
+Lyse summaries are good, but you know your team best. Check the content in your inbox before publishing. If you need to adjust something, copy the content and paste it where you need.
+
+---
+
+## What you can capture
+
+Thread to Task works for any kind of actionable item:
+
+- **Bugs** — "The checkout flow breaks on mobile"
+- **Feature requests** — "Users keep asking for dark mode"
+- **Technical debt** — "We should refactor the auth module"
+- **Decisions** — "We agreed to use Redis for caching"
+- **Action items** — "Someone needs to update the docs"
+- **Questions to investigate** — "Why is the API slow on Mondays?"
+
+Lyse turns this into a structured task with a clear title and actionable description. For feature discussions, Lyse captures the full context: why it's needed, how it should behave, and edge cases mentioned in the conversation.
+
+---
+
+## Permissions
+
+Lyse only accesses channels you've authorized during setup.
+
+<Info>
+  **Note**: You need **Admin** permissions in your Slack workspace to install the Lyse app.
+</Info>
+
+- **One workspace, one account:** A Slack workspace can only be connected to one Lyse account. All members of the workspace can use Thread to Task, but tasks are sent to the inbox of the user who connected Slack from Lyse.
+- **Adding Lyse to channels:** Lyse automatically joins a channel when you mention it for the first time. You can also add it manually by going to the channel settings and adding Lyse to the channel members.
+- **Channel selection during setup:** The channel you select when connecting Slack is for the Notifier feature. Each time a Figma library is published, Lyse sends a notification to this channel with a preview of the generated tasks.
+- **Private channels:** Lyse can access private channels if you add it as a member. Go to the channel, click the channel name, and add Lyse to the channel members.
+- **DMs:** Lyse doesn't access direct messages.
+
+---
+
+## Troubleshooting
+
+### No response
+
+- Check that Lyse is added to the channel (for private channels)
+- Verify your Slack connection in **Integrations \> Slack**
+- Make sure you're mentioning `@Lyse` in a thread, not a top-level message
+
+### Missing context
+
+- Add instructions: `@Lyse create a detailed bug report`
+- Make sure the key information is in the thread (not in a different conversation)
+- Copy the content and adjust it manually if needed
+
+### Task not visible
+
+- Check that your Slack connection is active
+- Tasks are sent to the Lyse account that connected the Slack workspace
+- Look at the Lyse inbox—it might be there but needs review
+
+### Analysis failed or slow
+
+- If the thread is too complex, you can retry the analysis
+- If the request takes too long, use the retry button
+- Lyse provides a retry option directly in Slack when something goes wrong
+
+---
+
+## Related
+
+Connect your issue tracker to publish tasks.
+
+<Columns cols={2}>
+  <Card title="Linear" icon="linear">
+    Publish tasks to Linear
+  </Card>
+  <Card title="Jira" icon="jira">
+    Publish tasks to GitHub Issues
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Github" icon="github">
+    Publish tasks to Jira
+  </Card>
+  <Card title="Gitlab" icon="gitlab">
+    Publish tasks to GitLab Issues
+  </Card>
+</Columns>

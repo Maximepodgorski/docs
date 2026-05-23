@@ -1,0 +1,55 @@
+---
+title: "Slack"
+description: "Connect Slack to create tasks from conversations. Once connected, mention @Lyse in any thread."
+---
+
+![Hero Dark](/images/integrations/slack-dark.png)
+
+## Setup
+
+1. Go to **Settings \> Integrations \> Slack**
+2. Click **Connect Slack**
+3. Select your workspace and click **Allow**
+
+Lyse is now available in your workspace.
+
+## Usage
+
+Mention `@Lyse` in any thread to create a task.
+
+```
+@Lyse
+@Lyse create a bug task
+@Lyse this is a feature request for the mobile app
+```
+
+Lyse analyzes the conversation and creates a task in your connected issue tracker.
+
+## Channels
+
+Lyse joins a channel when you first mention it there. For private channels, add Lyse manually:
+
+1. Go to the channel settings
+2. Click **Integrations** or **Add apps**
+3. Add Lyse
+
+<Info>
+  Lyse doesn't access direct messages.
+</Info>
+
+## Permissions
+
+A Slack workspace can only be connected to one Lyse account. All team members can mention `@Lyse`, and tasks are created in the connected issue tracker.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Authorization failed">
+    Make sure you have admin permissions in your Slack workspace.
+  </Accordion>
+  <Accordion title="Lyse not responding">
+    - For private channels, add Lyse as a member first
+    - Check your connection is active in **Settings \> Integrations**
+    - Mention `@Lyse` in a thread, not a top-level message
+  </Accordion>
+</AccordionGroup>

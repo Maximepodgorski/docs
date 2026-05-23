@@ -1,0 +1,38 @@
+---
+title: "Jira"
+description: "Connect Jira to receive tasks from Lyse."
+---
+
+![Linear Light](/images/integrations/jira-dark.png)
+
+## Setup
+
+1. Go to **Settings \> Integrations \> Jira**
+2. Click **Connect** and authorize Lyse
+3. Select your default project and issue type
+4. Click **Save**
+
+## What gets created
+
+When you mention `@Lyse` in Slack, a Jira issue is created with:
+
+- Summary generated from the conversation
+- Description with full context
+- Created in your default project with your default issue type
+
+## Configuration
+
+Change your default project and issue type anytime in **Settings \> Integrations \> Jira**.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection failed">
+    Make sure you have permission to install apps in your Jira instance. Try disconnecting and reconnecting.
+  </Accordion>
+  <Accordion title="Issues not appearing">
+    - Check your Jira connection is active
+    - Verify the selected project still exists
+    - Check you have permission to create issues in the project
+  </Accordion>
+</AccordionGroup>

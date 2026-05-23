@@ -1,0 +1,43 @@
+---
+title: "Gitlab"
+description: "Connect GitLab to receive tasks from Lyse as issues."
+---
+
+![Gitlab Light](/images/integrations/gitlab-dark.png)
+
+## Setup
+
+1. Go to **Settings \> Integrations \> GitLab**
+2. Click **Connect** and authorize Lyse
+3. Select your default project
+4. Click **Save**
+
+## What gets created
+
+When you mention `@Lyse` in Slack, a GitLab issue is created with:
+
+- Title generated from the conversation
+- Description with full context
+- Created in your default project
+
+## Configuration
+
+Change your default project anytime in **Settings \> Integrations \> GitLab**.
+
+## Troubleshooting
+
+### Connection failed
+
+- Verify your token has the correct scopes: `read_user` and `api`
+- Make sure the token hasn't expired
+
+## Learn more
+
+<Columns cols={2}>
+  <Card title="Tasks from Slack" icon="slack" color="#ffffff" href="/features/task-generation/slack">
+    Create tasks from Slack conversations
+  </Card>
+  <Card title="Tasks from Figma" icon="figma" color="#ffffff" href="/features/task-generation/figma">
+    Create tasks from component changes
+  </Card>
+</Columns>

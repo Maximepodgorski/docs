@@ -1,0 +1,38 @@
+---
+title: "Github"
+description: "Connect GitHub to receive tasks from Lyse as issues."
+---
+
+![Github Light](/images/integrations/github-dark.png)
+
+## Setup
+
+1. Go to **Settings \> Integrations \> GitHub**
+2. Click **Connect** and authorize Lyse
+3. Select your default repository
+4. Click **Save**
+
+## What gets created
+
+When you mention `@Lyse` in Slack, a GitHub issue is created with:
+
+- Title generated from the conversation
+- Body with full context
+- Created in your default repository
+
+## Configuration
+
+Change your default repository anytime in **Settings \> Integrations \> GitHub**.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection failed">
+    Make sure you have permission to install GitHub Apps in your organization. Try disconnecting and reconnecting.
+  </Accordion>
+  <Accordion title="Issues not appearing">
+    - Check your GitHub connection is active
+    - Verify the selected repository still exists
+    - Check you have write access to the repository
+  </Accordion>
+</AccordionGroup>

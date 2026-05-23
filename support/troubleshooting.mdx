@@ -1,0 +1,46 @@
+---
+title: "Troubleshooting"
+---
+
+<AccordionGroup>
+  <Accordion title="Lyse not responding">
+    **Symptom**: You mention `@Lyse` but nothing happens.
+
+    **Solutions**:
+
+    - Make sure you're mentioning `@Lyse` in a thread, not a top-level message
+    - For private channels, add Lyse as a member first
+    - Check your Slack connection is active in **Settings \> Integrations**
+  </Accordion>
+  <Accordion title="Tasks not appearing in issue tracker">
+    **Symptom**: Lyse responds but no task is created.
+
+    **Solutions**:
+
+    - Verify your issue tracker is connected in **Settings \> Integrations**
+    - Check the selected team/project still exists
+    - Make sure you have permission to create issues
+  </Accordion>
+  <Accordion title="Figma context not included">
+    **Symptom**: You shared a Figma link but the task doesn't include component details.
+
+    **Solutions**:
+
+    - Check your Figma account is connected in **Settings \> Integrations \> Figma**
+    - Verify the link format: `figma.com/design/...?node-id=...`
+    - Make sure your Figma account has access to the file
+  </Accordion>
+  <Accordion title="Authorization errors">
+    **Symptom**: Connection fails during setup.
+
+    **Solutions**:
+
+    - For Slack: Make sure you have admin permissions in your workspace
+    - For issue trackers: Verify you can install apps in your organization
+    - Try disconnecting and reconnecting the integration
+  </Accordion>
+</AccordionGroup>
+
+## Need more help?
+
+Contact us at [<u>contact@getlyse.com</u>](mailto:contact@getlyse.com) or join our [<u>Discord</u>](https://discord.gg/PUb3rEUf).

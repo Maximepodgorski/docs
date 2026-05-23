@@ -1,0 +1,197 @@
+---
+title: "How it works"
+description: "Lyse captures context from where work happens and turns it into tasks your team can act on. Here's how it all fits together."
+---
+
+## How the flow works
+
+Everything in Lyse follows the same pattern: **Source, AI, Review, Publish.**
+
+<Steps>
+  <Step title="Capture">
+    A discussion reaches a conclusion in Slack. A designer publishes library updates in Figma. These are the moments where tasks are born—but usually lost.
+  </Step>
+  <Step title="Analyze">
+    Lyse reads the conversation or detects the design change. It extracts what matters: the problem, the context, the action needed. A draft task is created automatically.
+  </Step>
+  <Step title="Review (optional)">
+    Every generated task lands in your Lyse inbox first. Check the summary, edit if needed, add labels or assignees. You decide what's worth publishing.
+
+    On **Pro** and higher plans, you can skip this step entirely—tasks go straight to your issue tracker automatically.
+  </Step>
+  <Step title="Publish">
+    One click from your inbox, or automatic if you've enabled direct publishing. The task appears in Linear, GitHub, Jira, or GitLab—with full context. Your team knows what to do without asking "what changed?"
+  </Step>
+</Steps>
+
+<Info>
+  You're always in control. Review everything manually, or trust Lyse to publish automatically—your choice.
+</Info>
+
+---
+
+## Sources where tasks come from
+
+Lyse watches two sources for task-worthy content.
+
+### Slack
+
+When you mention `@Lyse` in a Slack thread, it reads the entire conversation and extracts what matters.
+
+![Notification Dark](/images/features/notification-dark.png)
+
+**How it works**
+
+1. A discussion happens in Slack—a bug report, feature idea, or decision
+1. You mention `@Lyse` (optionally with instructions like `@Lyse create a bug ticket`)
+3. Lyse analyzes the thread and identifies the key information
+4. A task appears in your inbox, ready to review
+
+**What Lyse extracts**
+
+- **Bug** descriptions with reproduction steps
+- **Feature** requests with context
+- **Decisions** and action items
+- **Technical requirements** mentioned in discussion
+
+**Example**
+
+> Your team debates a UI issue for 15 messages. Instead of summarizing it yourself, mention `@Lyse create a bug task`. Lyse reads the thread, extracts the problem description, identifies who reported it, and creates a formatted ticket—all in seconds.
+
+### Figma
+
+When you publish a Figma library, Lyse detects what changed and generates tasks automatically.
+
+<img
+  src="/images/features/publish-figma-dark.png"
+  alt="Figma Library Publish"
+  style={{ width:"100%" }}
+  title=""
+/>
+
+**How it works**
+
+1. You make changes to components in your Figma library
+2. You publish the **library in Figma**
+3. Lyse **receives** a notification
+4. Lyse **analyzes** what changed and generates a summary
+5. A task **appears** in your inbox for each change
+
+**What Lyse detects**
+
+- Component **updates** (properties, colors, spacing, typography, variants)
+- New components **added** to the library
+- Components **deleted** from the library
+
+**Example**
+
+> You update the padding on your Button component from `layout-padding-md` to `layout-padding-sm` and publish. Lyse creates a task: "Button padding reduced. Developers should update the padding value and verify layouts."
+
+---
+
+## Review before publish
+
+The Reviewer is where all generated tasks land before reaching your team. Think of it as a quality gate.
+
+![Hero Light](/images/features/review-dark.png)
+
+**What you see for each task**
+
+- The source (which Slack workspace or Figma file)
+- The AI-generated title and description
+- A preview of how it will look in your issue tracker
+
+**What you can do**
+
+- **Check** the AI-generated content before publishing
+- **Copy** the title or description if you want to paste it elsewhere or adjust it manually
+- **Publish** to send it directly to your issue tracker
+- **Dismiss** if the change doesn't need a task
+- **Batch publish** multiple tasks at once for routine updates
+
+<Info>
+  The inbox keeps you in control while eliminating the manual work of writing tasks.
+</Info>
+
+## Where tasks are sent
+
+Once you approve a task, Lyse publishes it to your connected issue tracker.
+
+**Supported destinations**
+
+- **Linear** — Create issues in any team, with labels and project linking
+- **GitHub** — Create issues in any repository
+- **Jira** — Create tickets in any project
+- **GitLab** — Create issues in any project
+
+<Info>
+  You can connect multiple destinations. For example, design token changes to Linear and component updates to GitHub.
+</Info>
+
+**What gets published**
+
+- Title (AI-generated)
+- Description with full context
+- Project/team (configurable in integration settings)
+
+<Note>
+  Coming soon: Auto mode will automatically assign tasks, apply labels, and select the right project/team based on the task context and your workspace structure.
+</Note>
+
+## How Lyse understands context
+
+Lyse uses AI to analyze content and generate useful task descriptions.
+
+**For Slack threads**
+
+- Reads the full conversation history
+- Identifies the main topic and any action items
+- Extracts relevant details (error messages, user reports, decisions)
+- Formats everything into a clear task structure
+
+**For Figma changes**
+
+- Compares the published version to the previous state
+- Identifies what properties changed
+- Translates design changes into developer-friendly language
+- Suggests what developers should check or update
+
+The AI summaries are designed to give developers actionable context—not just "Button changed" but "Button padding reduced, check layouts."
+
+## Example workflow
+
+Here's a typical workflow combining both sources:
+
+<Steps>
+  <Step title="Monday">
+    Your design system lead updates several components in Figma and publishes. Lyse generates 8 tasks. They review, dismiss 2 minor changes, and publish 6. Those 6 tasks land in Linear.
+  </Step>
+  <Step title="Tuesday">
+    A PM discusses a bug with engineering in Slack. 20 messages later, they have a clear understanding. The PM mentions `@Lyse create a bug task`. The task appears in their inbox, they add a priority label, and approve. It's in Jira 10 seconds later.
+  </Step>
+  <Step title="The result">
+    No context lost. No manual copy-pasting. Tasks flow from where work happens to where work is tracked.
+  </Step>
+</Steps>
+
+## Learn more
+
+Connect your issue tracker to publish tasks.
+
+<Columns cols={2}>
+  <Card title="Linear" icon="linear" color="#ffffff" href="/integrations/destinations/linear">
+    Publish tasks to Linear
+  </Card>
+  <Card title="Jira" icon="jira" color="#ffffff" href="/integrations/destinations/jira">
+    Publish tasks to Jira
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Github" icon="github" color="#ffffff" href="/integrations/destinations/github">
+    Publish tasks to GitHub
+  </Card>
+  <Card title="Gitlab" icon="gitlab" color="#ffffff" href="/integrations/destinations/gitlab">
+    Publish tasks to GitLa
+  </Card>
+</Columns>

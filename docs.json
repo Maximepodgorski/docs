@@ -1,0 +1,111 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "Lyse Documentation",
+  "colors": {
+    "primary": "#ffffff",
+    "light": "#ffffff",
+    "dark": "#ffffff"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Changelog",
+          "icon": "book-open-cover",
+          "color": {
+            "light": "#ffffff",
+            "dark": "#ffffff"
+          },
+          "href": "https://www.getlyse.com/changelog"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "color": {
+            "light": "#ffffff",
+            "dark": "#ffffff"
+          },
+          "href": "https://www.getlyse.com/blog"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Docs",
+        "icon": "book-blank",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "getting-started/introduction",
+              "getting-started/quickstart"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/figma",
+              "integrations/github",
+              "integrations/gitlab",
+              "integrations/jira",
+              "integrations/linear",
+              "integrations/slack"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/faq",
+              "support/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:contact@getlyse.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/getlyse",
+      "linkedin": "https://www.linkedin.com/company/getlyse",
+      "discord": "https://discord.gg/EEvDuv5Y",
+      "website": "https://www.getlyse.com/"
+    }
+  },
+  "search": {
+    "prompt": "Search..."
+  },
+  "appearance": {
+    "default": "dark"
+  }
+}
