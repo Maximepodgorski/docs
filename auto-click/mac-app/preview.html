@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>AutoClick – aperçu</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#e9e9ee;--win:#fff;--text:#1d1d1f;--sub:#86868b;--line:#d9d9de;--accent:#0a84ff;--stop:#ff453a}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1c1e;--win:#2b2b2e;--text:#f5f5f7;--line:#444;--sub:#98989d}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);font:13px -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;color:var(--text)}
+.win{width:340px;background:var(--win);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.25),0 0 0 1px var(--line);overflow:hidden}
+.bar{height:38px;display:flex;align-items:center;gap:8px;padding:0 14px}
+.bar i{width:12px;height:12px;border-radius:50%;display:block}
+.bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.body{padding:0 24px 24px;display:flex;flex-direction:column;align-items:center;gap:14px}
+h1{margin:0;font-size:17px}
+.row{display:flex;align-items:center;gap:6px}
+input[type=number]{width:54px;text-align:right;padding:4px 6px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;font:inherit}
+input:disabled{opacity:.5}
+label{display:flex;gap:8px;align-items:center}
+button{font:inherit;font-size:14px;padding:7px 36px;border:0;border-radius:7px;background:var(--accent);color:#fff;cursor:pointer}
+button.on{background:var(--stop)}
+.status{color:var(--sub);font-size:11px;text-align:center;min-height:14px}
+.dot{position:fixed;width:14px;height:14px;border-radius:50%;background:rgba(10,132,255,.5);pointer-events:none;transition:all .3s}
+</style></head><body>
+<div class="win">
+  <div class="bar"><i></i><i></i><i></i></div>
+  <div class="body">
+    <h1>AutoClick</h1>
+    <div class="row">Toutes les <input id="iv" type="number" value="60" min="1"> secondes</div>
+    <label><input id="ck" type="checkbox" checked> Cliquer (sinon, déplace seulement la souris)</label>
+    <button id="btn">Démarrer</button>
+    <div class="status" id="st">Arrêté</div>
+  </div>
+</div>
+<div class="dot" id="dot" hidden></div>
+<script>
+// Maquette : simule l'interface, ne contrôle pas la vraie souris.
+const $=id=>document.getElementById(id);let t=null,left=0;
+const hhmmss=()=>new Date().toTimeString().slice(0,8);
+function tick(){
+  const x=Math.random()*innerWidth,y=Math.random()*innerHeight,d=$('dot');
+  d.hidden=false;d.style.left=x+'px';d.style.top=y+'px';
+  $('st').textContent='Dernière action à '+hhmmss()+($('ck').checked?' (déplacement + clic)':' (déplacement)');
+  left=+$('iv').value;
+}
+$('btn').onclick=()=>{
+  if(t){clearInterval(t);t=null;$('btn').textContent='Démarrer';$('btn').className='';$('iv').disabled=false;$('st').textContent='Arrêté';$('dot').hidden=true;return}
+  $('btn').textContent='Arrêter';$('btn').className='on';$('iv').disabled=true;tick();
+  t=setInterval(()=>{if(--left<=0)tick()},1000);
+};
+</script></body></html>
